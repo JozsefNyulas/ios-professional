@@ -1,5 +1,2 @@
 # ios-professional
-Repository for iOS work
-
-HELLO!
-
+Repository for iOS course
