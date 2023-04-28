@@ -88,8 +88,8 @@
 		FFA1544029E82AD50059478B /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FF4A4E6229E825AC00E77152 /* LoginViewController.swift */,
 				FFA1544129E8300D0059478B /* LoginView.swift */,
+				FF4A4E6229E825AC00E77152 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";

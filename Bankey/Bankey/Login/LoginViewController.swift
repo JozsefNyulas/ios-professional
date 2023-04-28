@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject
+{
+    func didLogin()
+}
+
 class LoginViewController: UIViewController
 {
 
@@ -16,6 +21,8 @@ class LoginViewController: UIViewController
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
+    
+    weak var delegate: LoginViewControllerDelegate?
    
     
     var username: String?
@@ -36,7 +43,6 @@ class LoginViewController: UIViewController
         layout()
         
     }
-
 }
 
 extension LoginViewController
@@ -73,8 +79,7 @@ extension LoginViewController
         errorMessageLabel.textColor = .systemRed
         errorMessageLabel.numberOfLines = 0
         errorMessageLabel.isHidden = true
-        
-        
+
     }
     
     private func layout()
@@ -152,9 +157,10 @@ extension LoginViewController
             return
         }
         
-        if username == "Jozsef"  && password == "Password"
+        if username == "1"  && password == "1"
         {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
         }
         else
         {
