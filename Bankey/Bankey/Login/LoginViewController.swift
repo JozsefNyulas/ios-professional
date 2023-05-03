@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject
+{
+    func didLogout()
+}
+
 protocol LoginViewControllerDelegate: AnyObject
 {
     func didLogin()
@@ -42,6 +47,14 @@ class LoginViewController: UIViewController
         style()
         layout()
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
+        loginView.usernameTextField.text = ""
+        loginView.passwordTextField.text = ""
     }
 }
 
